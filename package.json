@@ -1,0 +1,14 @@
+{
+    "name": "react-sdr",
+    "version": "0.0.1",
+    "description": "A try at a multiplatform sdr visualiser for rtl-sdr compatible servers",
+    "main": "src/index.js",
+    "author": "Jonathan Adami <contact@jadami.com>",
+    "license": "MIT",
+    "devDependencies": {
+        "electron": "^13.2.1"
+    },
+    "scripts": {
+        "start": "electron src"
+    }
+}
