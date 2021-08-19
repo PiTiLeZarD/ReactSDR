@@ -1,5 +1,7 @@
+import Button from "@material-ui/core/Button";
+
 const App = (props) => {
-    return <p>Test App</p>;
+    return <Button>Test</Button>;
 };
 
 export default App;
