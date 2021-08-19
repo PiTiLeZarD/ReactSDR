@@ -24,7 +24,7 @@
         "clean": "rm -Rf dist .parcel-cache out",
         "dev": "parcel ./src/index.html",
         "build": "yarn clean && parcel build --public-url ./ ./src/index.html",
-        "start": "electron-forge start",
+        "start": "parcel --public-url ./ ./src/index.html & electron-forge start",
         "package": "yarn build && electron-forge package",
         "make": "electron-forge make"
     },
