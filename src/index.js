@@ -2,7 +2,7 @@
 const { app, BrowserWindow } = require("electron");
 const path = require("path");
 
-function createWindow() {
+const createWindow = () => {
     // Create the browser window.
     const mainWindow = new BrowserWindow({
         width: 800,
@@ -17,7 +17,7 @@ function createWindow() {
 
     // Open the DevTools.
     // mainWindow.webContents.openDevTools()
-}
+};
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
