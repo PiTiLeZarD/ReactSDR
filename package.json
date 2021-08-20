@@ -21,12 +21,12 @@
         "parcel": "^2.0.0-rc.0"
     },
     "scripts": {
-        "clean": "rm -Rf dist .parcel-cache out",
         "dev": "parcel ./src/index.html",
         "build": "yarn clean && parcel build --public-url ./ ./src/index.html",
         "start": "parcel --public-url ./ ./src/index.html & electron-forge start",
         "package": "yarn build && electron-forge package",
-        "make": "electron-forge make"
+        "make": "yarn build && electron-forge make",
+        "clean": "rm -Rf dist .parcel-cache out"
     },
     "dependencies": {
         "@emotion/react": "^11.4.1",
