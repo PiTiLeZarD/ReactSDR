@@ -1,8 +1,15 @@
-import { Fragment } from "react";
-import Button from "@material-ui/core/Button";
+import { Fragment, useRef, useEffect } from "react";
 import Grid from "@material-ui/core/Grid";
 
 const App = (props) => {
+    const messageHistory = useRef([]);
+
+    useEffect(() => {
+        document.getElementById("root").addEventListener("rtl_data", ({ detail: data }) => {
+            messageHistory.current = messageHistory.current.concat(data);
+        });
+    }, []);
+
     return (
         <Fragment>
             <Grid container>
@@ -18,6 +25,11 @@ const App = (props) => {
             </Grid>
             <div>Here the frequency</div>
             <div>Here the waterfall</div>
+            <ul>
+                {messageHistory.current.map((message, idx) => (
+                    <span key={idx}>{message ? message.data : null}</span>
+                ))}
+            </ul>
         </Fragment>
     );
 };

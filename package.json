@@ -24,7 +24,7 @@
     "scripts": {
         "dev": "parcel ./src/index.html",
         "build": "yarn clean && parcel build --public-url ./ ./src/index.html",
-        "start": "concurrently --kill-others 'parcel --public-url ./ --hmr-port 8080 ./src/index.html' 'electron-forge start'",
+        "start": "concurrently --kill-others 'rtl_tcp -p 9000' 'parcel --public-url ./ --hmr-port 8080 ./src/index.html' 'electron-forge start'",
         "package": "yarn build && electron-forge package",
         "make": "yarn build && electron-forge make",
         "clean": "rm -Rf dist .parcel-cache out"
