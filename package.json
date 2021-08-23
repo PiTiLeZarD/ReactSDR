@@ -24,10 +24,12 @@
     "scripts": {
         "dev": "parcel ./src/index.html",
         "build": "yarn clean && parcel build --public-url ./ ./src/index.html",
-        "start": "concurrently --kill-others 'rtl_tcp -p 9000' 'parcel --public-url ./ --hmr-port 8080 ./src/index.html' 'electron-forge start'",
+        "start": "concurrently --kill-others 'parcel --public-url ./ --hmr-port 8080 ./src/index.html' 'electron-forge start'",
         "package": "yarn build && electron-forge package",
         "make": "yarn build && electron-forge make",
-        "clean": "rm -Rf dist .parcel-cache out"
+        "clean": "rm -Rf dist .parcel-cache out",
+        "rtl": "rtl_tcp -p 9000",
+        "killrtl": "ps -e | grep rtl | grep -v grep | cut -d\" \" -f 1 | xargs kill"
     },
     "dependencies": {
         "@emotion/react": "^11.4.1",
@@ -36,7 +38,9 @@
         "electron-squirrel-startup": "^1.0.0",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
-        "regenerator-runtime": "^0.13.9"
+        "react-minigraph": "^0.0.5",
+        "regenerator-runtime": "^0.13.9",
+        "zustand": "^3.5.9"
     },
     "config": {
         "forge": {
